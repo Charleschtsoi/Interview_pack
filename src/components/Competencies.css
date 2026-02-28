@@ -1,0 +1,71 @@
+.competencies {
+  background: var(--bg-secondary);
+}
+
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.competency-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.competency-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.competency-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.competency-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.competency-list {
+  list-style: none;
+  padding: 0;
+}
+
+.competency-list li {
+  padding: 0.75rem 0;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.competency-list li:last-child {
+  border-bottom: none;
+}
+
+.competency-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .competencies-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .competency-card {
+    padding: 1.5rem;
+  }
+}
