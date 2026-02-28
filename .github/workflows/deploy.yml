@@ -30,8 +30,14 @@ jobs:
           node-version: '18'
           cache: 'npm'
       
+      - name: Clear npm cache
+        run: npm cache clean --force
+      
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm --version
+          node --version
+          npm install --legacy-peer-deps
       
       - name: Build
         run: npm run build
